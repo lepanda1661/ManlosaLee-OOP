@@ -1,0 +1,9 @@
+public class FavSong{
+   public static void main(String[]args){
+      System.out.println("Ubay-ubay nasad akong gi agian");
+      System.out.println("Gitindugan wa ra ga alang-alang");
+      System.out.println("Di na madali karun ni arang-arang");
+      System.out.println("Sungayan na’y pako tawga ko ug bakukang");
+   }
+
+}
