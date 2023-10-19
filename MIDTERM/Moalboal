@@ -1,0 +1,79 @@
+import java.util.Scanner;
+
+public class TestRoute {
+   static double subTotalDistance = 37.3;
+   static double totalDistance = 0;
+   static int minTOA = 0;
+   static int hrTOA = 0;
+   static Scanner scan = new Scanner(System.in);
+   
+   public static void main(String[] args) {
+      int choice, speed;
+      
+      System.out.print("Enter your speed: ");
+      speed = scan.nextInt();
+      System.out.print("\nIs Barili route available (YES == 1, 0 == NO)?: ");
+      choice = scan.nextInt();
+      
+      if (choice == 1) {
+         System.out.println("- Cebu City   (Emall)        - Start");
+         System.out.println("- Route 1     (Minglanilla)  - Route 1");
+         System.out.println("- Route 2     (San Fernando) - Route 2");
+         System.out.println("- Route 3     (Carcar)       - Route 3");
+         System.out.println("- Route 4.1   (Barili)       - Route 4.1");
+         System.out.println("- Route 4.1.1 (Dumanjug)     - Route 4.1.1");
+         System.out.println("- Route 4.1.2 (Alcantara)    - Route 4.1.2");
+         bariliRoute(speed);
+      }
+      else if (choice == 0) {
+         sibongaRoute(speed);
+      }
+      else {
+         System.out.println("Invalid");  
+      }
+   }
+   
+   public static void bariliRoute(int _speed) {
+      totalDistance = subTotalDistance + 47.6;
+      
+      int minTOA = (int)totalDistance % _speed;
+      int hrTOA = (int)totalDistance / _speed;
+      
+      System.out.println("Speed: " + _speed);
+      System.out.println("Total Distance: " + totalDistance);
+      System.out.println("Est. Time of Arrival: " + hrTOA + " Hour " + minTOA + " Minutes");
+   }
+   
+   public static void sibongaRoute(int _speed){
+      double dumanjugDistance = 55.9;
+      double argaoDistance = 54.9;
+      
+      System.out.println("Choose a route ");
+      System.out.println("1. Dumanjug");
+      System.out.println("2. Argao");
+      System.out.println("Enter here: ");
+      int newRoute = scan.nextInt();
+
+      if (newRoute == 1) {
+         totalDistance = subTotalDistance + dumanjugDistance;
+         minTOA = (int)totalDistance % _speed;
+         hrTOA = (int)totalDistance / _speed;
+         
+         System.out.println("Speed: " + _speed);
+         System.out.println("Total Distance:  " + totalDistance);
+         System.out.println("Est. Time of Arrival: " + hrTOA + " Hour " + minTOA + " Minutes");
+      }
+      else if (newRoute == 2) {
+         totalDistance = subTotalDistance + dumanjugDistance;
+         minTOA = (int)totalDistance % _speed;
+         hrTOA = (int)totalDistance / _speed;
+         
+         System.out.println("Speed: " + _speed);
+         System.out.println("Total Distance:  " + totalDistance);
+         System.out.println("Est. Time of Arrival: " + hrTOA + " Hour " + minTOA + " Minutes");
+      }
+      else {
+         System.out.println("Invalid choice");
+      }
+   }
+}
